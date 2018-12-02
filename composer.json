@@ -1,0 +1,27 @@
+{
+    "name": "ellis/jaeger-client",
+    "description": "Jaeger bindings for PHP OpenTracing API",
+    "keywords": ["opentracing", "distributed-tracing", "jaeger", "tracing"],
+    "homepage": "https://github.com/ellisv/jaeger-client-php",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Jaeger\\Thrift\\": "thrift-gen/",
+            "Ellis\\Jaeger\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": { "Ellis\\Jaeger\\Tests\\": "tests/" }
+    },
+    "require": {
+        "php": "^7.1",
+        "apache/thrift": "^0.11.0",
+        "opentracing/opentracing": "^1.0.0-beta5",
+        "psr/log": "^1.1"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^7.4",
+        "psr/http-message": "^1.0"
+    }
+}
