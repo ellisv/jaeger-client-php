@@ -25,3 +25,14 @@ before_script:
 
 script:
   - vendor/bin/phpunit
+
+jobs:
+  include:
+    - stage: lint
+      php: 7.2
+      install:
+        - composer require phpstan/phpstan friendsofphp/php-cs-fixer
+      before_script: []
+      script:
+        - vendor/bin/phpstan analyze --no-progress src
+        - vendor/bin/php-cs-fixer fix --dry-run --diff
